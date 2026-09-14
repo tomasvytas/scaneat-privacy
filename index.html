@@ -29,7 +29,7 @@
     <div class="container">
         <h1>Privacy Policy</h1>
         <div class="subtitle">SCANEAT</div>
-        <p class="updated">Last updated: February 10, 2026</p>
+        <p class="updated">Last updated: September 14, 2026</p>
 
         <p>Scan&Eat ("we", "our", or "the app") is committed to protecting your privacy. This Privacy Policy explains what information we collect, how we use it, and your rights regarding your data.</p>
 
@@ -39,7 +39,7 @@
         <p>Scan&Eat requests access to your device camera and photo library solely to capture or select images of restaurant menus for analysis. We do not access any other photos or media on your device.</p>
 
         <p><strong>Menu Text Data</strong></p>
-        <p>When you scan a menu, text recognition (OCR) is performed entirely on your device using Apple's Vision framework. The extracted text is then sent to our AI analysis service (OpenAI) to estimate nutritional information. We do not store this text on our servers.</p>
+        <p>When you scan a menu, text recognition (OCR) is performed entirely on your device using Apple's Vision framework. The extracted text is sent through our backend hosted by Railway to OpenAI to identify dishes, estimate recipe portions, and match food references. In the updated scanner you review the text and give permission before sharing it. You can turn off future AI sharing in Settings. We do not store this text on our servers.</p>
 
         <p><strong>Images</strong></p>
         <p>Your photos are never uploaded to any server. All image processing happens locally on your device. Only the extracted text is transmitted for AI analysis.</p>
@@ -47,8 +47,8 @@
         <p><strong>Subscription Information</strong></p>
         <p>If you subscribe to Scan&Eat Pro, payment is processed entirely by Apple through the App Store. We do not collect, store, or have access to your payment information, credit card details, or Apple ID.</p>
 
-        <p><strong>API Keys</strong></p>
-        <p>If you provide an OpenAI API key in the app settings, it is stored locally on your device only. It is never transmitted to our servers or shared with any third party other than OpenAI for the purpose of menu analysis.</p>
+        <p><strong>Operational Statistics</strong></p>
+        <p>Our server records daily aggregate request counts, successful and unsuccessful analyses, processing times, model token usage, and the number of dishes calculated from nutrition references. These aggregates do not contain menu text, dish names, photos, customer or device identifiers. We use them to understand scanner reliability and operating costs. They cannot identify individual customers.</p>
 
         <h2>2. How We Use Your Information</h2>
         <p>We use the information solely to:</p>
@@ -57,24 +57,27 @@
             <li>Send extracted menu text to AI for nutritional analysis</li>
             <li>Display analysis results within the app</li>
             <li>Store your scan history locally on your device</li>
+            <li>Calculate estimated nutrients from USDA reference data and monitor aggregate service performance</li>
         </ul>
 
         <h2>3. Data Storage</h2>
-        <p>All app data, including scan history, preferences, and settings, is stored locally on your device. We do not maintain external databases or servers that store your personal information.</p>
+        <p>Your latest 50 scan results, preferences and settings are stored locally on your device. You can remove saved scans in History. Daily operational aggregates are stored on our Railway-hosted backend for up to 90 days. Menu text and analysis content are processed in memory and are not retained by our application backend. IP addresses are used temporarily in memory for rate limiting, for up to one hour. Hosting and AI providers may process connection metadata and retain operational or security records under their own terms.</p>
 
         <h2>4. Third-Party Services</h2>
         <p>Scan&Eat uses the following third-party services:</p>
         <ul>
             <li><strong>OpenAI API</strong> — to analyze menu text and estimate nutritional information. Menu text is sent to OpenAI's servers for processing. Please refer to <a href="https://openai.com/privacy" target="_blank">OpenAI's Privacy Policy</a> for information on how they handle data.</li>
+            <li><strong>Railway</strong> — hosts our analysis backend and aggregate statistics. See <a href="https://railway.com/legal/privacy">Railway’s Privacy Policy</a>.</li>
+            <li><strong>USDA FoodData Central</strong> — supplies public nutrition and portion reference data bundled on our server. We do not send your menu text to USDA.</li>
             <li><strong>Apple StoreKit</strong> — to process in-app subscriptions. Managed entirely by Apple.</li>
         </ul>
-        <p>We do not use any analytics, advertising, or tracking services.</p>
+        <p>We operate aggregate service analytics described above. We do not use advertising trackers or cross-app tracking.</p>
 
         <h2>5. Data Sharing</h2>
-        <p>We do not sell, trade, or share your personal information with any third parties, except as described above (OpenAI for menu analysis).</p>
+        <p>We do not sell, trade, or share your personal information with any third parties, except for the processing by OpenAI and Railway described above.</p>
 
         <h2>6. Data Retention</h2>
-        <p>Since all data is stored locally on your device, you have full control over it. You can delete your scan history within the app at any time, or delete the app entirely to remove all data.</p>
+        <p>You can delete local scan history in the app or remove the app to delete its local data. Operational aggregates expire after 90 days; they contain no customer identifiers and cannot be associated with an individual deletion request. Provider retention policies apply separately to data processed by OpenAI and Railway.</p>
 
         <h2>7. Children's Privacy</h2>
         <p>Scan&Eat is not directed at children under the age of 13. We do not knowingly collect personal information from children.</p>
@@ -89,7 +92,7 @@
         </ul>
 
         <h2>9. Security</h2>
-        <p>We take reasonable measures to protect the information processed by the app. All communication with third-party APIs uses encrypted HTTPS connections. Your data remains on your device and is protected by iOS security features.</p>
+        <p>We take reasonable measures to protect the information processed by the app. All communication with third-party APIs uses encrypted HTTPS connections. Local history is protected by iOS security features. The owner dashboard requires a password and displays only aggregate statistics.</p>
 
         <h2>10. Changes to This Policy</h2>
         <p>We may update this Privacy Policy from time to time. Any changes will be reflected with an updated "Last updated" date at the top of this page. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
